@@ -1,0 +1,11 @@
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
+
+RUN apt update
+RUN apt install git git-lfs -y unzip zip curl wget
+RUN git-lfs install
+
+COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg

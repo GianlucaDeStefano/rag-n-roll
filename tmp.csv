@@ -1,0 +1,17 @@
+Value,Optimization,Score,Metric,Marker,LineStyle,Color
+phi3,Original queries Benign,0.74,Benign,x,-,tab:red
+Llama3-8B,Original queries Benign,0.7933333333333333,Benign,x,-,tab:red
+GPT4,Original queries Benign,0.8733333333333333,Benign,x,-,tab:red
+Sonet,Original queries Benign,0.84,Benign,x,-,tab:red
+phi3,Mutated queries Benign,0.7666666666666667,Benign,x,-,tab:green
+Llama3-8B,Mutated queries Benign,0.8,Benign,x,-,tab:green
+GPT4,Mutated queries Benign,0.88,Benign,x,-,tab:green
+Sonet,Mutated queries Benign,0.86,Benign,x,-,tab:green
+phi3,Original queries Hallucination,0.24,Hallucination,*,--,tab:red
+Llama3-8B,Original queries Hallucination,0.17333333333333334,Hallucination,*,--,tab:red
+GPT4,Original queries Hallucination,0.12,Hallucination,*,--,tab:red
+Sonet,Original queries Hallucination,0.12,Hallucination,*,--,tab:red
+phi3,Mutated queries Hallucination,0.18666666666666668,Hallucination,*,--,tab:green
+Llama3-8B,Mutated queries Hallucination,0.18,Hallucination,*,--,tab:green
+GPT4,Mutated queries Hallucination,0.12,Hallucination,*,--,tab:green
+Sonet,Mutated queries Hallucination,0.10666666666666667,Hallucination,*,--,tab:green

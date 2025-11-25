@@ -1,0 +1,25 @@
+FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
+RUN python -V
+
+RUN apt upgrade
+RUN apt update
+RUN apt install -y --fix-missing git git-lfs gcc g++ wget htop unzip
+RUN git-lfs install
+
+RUN pip install --upgrade pip
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+# Install apex manually
+RUN apt install -y python-packaging
+RUN conda install -c nvidia cuda-nvcc
+
+RUN git clone https://github.com/NVIDIA/apex 
+
+WORKDIR /workspace/apex
+
+RUN pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+
+RUN python -m nltk.downloader stopwords
+
+WORKDIR /home
