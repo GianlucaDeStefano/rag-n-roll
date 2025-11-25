@@ -23,19 +23,18 @@ pip install -r docker/requirements.txt
 
 4) Make sure that docker is running on the machine as we will need it to run the optimization processes. 
 
-### Dataset
-This step is only necessary if you want to generate a new benchmark dataset using the methodology of this paper. If you want to re-use the same benchmarks used in the paper, you can skip this step and pass to the benchmark section. 
+### Download our sataset
+You can download our NQopen [here](https://mega.nz/file/pb0nESiI#TFtiv_K4V6KyVPfJs9J8T55m5w7wEYj3yrOyEr3DxpQ)
+Place the unzipped datasets in the `data/benchmarks` directory.
 
-Download link to our dataset: [Coming soon]
-
-#### Rebuilding datasets
-You can re-build a new dataset using our methodology by executing the following command:
+### Rebuilding datasets
+As an alternative, you can re-build a new dataset using our methodology by executing the following command:
 ```bash
 # Build our NQopen dataset
 python make_datasets.py --dataset_name=NQopen --n_distractor_docs=10000  --output_name=NQopen
 ```
 
-#### Optimized Documents
+#### Optimize Documents
 To generate optimized documents, you can use the following command:
 ```bash
 python make_optimized_documents.py --dataset_path=<path to the dataset folder> --optimization_type=<optimization type>
