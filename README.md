@@ -35,7 +35,7 @@ python make_datasets.py --dataset_name=NQopen --n_distractor_docs=10000  --outpu
 ```
 
 ### Benchmark
-You can find the benchmarks used in the paper (here)[https://mega.nz/file/5P0liAwY#btMh1OOoKJaQbwzShbr79s0sxh5wv_Qj7cTyxMF1pTo]. 
+You can find the benchmarks used in the paper [here](https://mega.nz/file/5P0liAwY#btMh1OOoKJaQbwzShbr79s0sxh5wv_Qj7cTyxMF1pTo). 
 Download and unpack them inside the folder <project_root>/data/bechmarks.
 
 Alternatively, to generate a new benchmark, you can re-use the same procedure as in the paper by executing the following command:

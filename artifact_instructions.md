@@ -2,7 +2,7 @@
 These instructions help to reproduce the results seen on the paper. 
 
 ### Download the data 
-Download the results from (here)[https://mega.nz/file/RW8GhC7C#qPBmmdj0m0fb4iKQr7CTrZEltNf_K0Q-Wg9ezFBMtmQ] and unpack the zip inside the folder <project_root>/data
+Download the results from [here](https://mega.nz/file/RW8GhC7C#qPBmmdj0m0fb4iKQr7CTrZEltNf_K0Q-Wg9ezFBMtmQ) and unpack the zip inside the folder <project_root>/data
 
 ### Dataset
 Table 4 of the paper shows the dataset statistics. 
