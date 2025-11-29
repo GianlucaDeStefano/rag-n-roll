@@ -1,0 +1,7 @@
+transformers==4.43.3
+beir===2.0.0
+tqdm==4.66.5
+google-generativeai==0.7.2
+fastchat==0.1.0
+accelerate==0.33
+openai==1.41.0

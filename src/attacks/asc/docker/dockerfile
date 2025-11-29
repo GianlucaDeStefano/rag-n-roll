@@ -1,0 +1,34 @@
+FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-runtime
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+
+RUN apt-get install -y  software-properties-common
+RUN command add-apt-repository ppa:deadsnakes/ppa
+
+RUN apt-get install -y git libmysqlclient-dev gcc g++ libxml2-dev libxslt-dev curl wget libxml2-dev libxslt-dev
+
+# Install rust and add to path
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Install python3.6 
+#RUN apt-get install -y python3.6 python3.6-venv python3.6-dev python-dev
+#RUN wget https://bootstrap.pypa.io/pip/3.6/get-pip.py
+#RUN python get-pip.py
+RUN pip install setuptools_rust
+RUN python -m pip install --upgrade pip
+COPY requirements.txt requirements.txt
+
+RUN python -m pip install -r requirements.txt
+
+RUN apt install -y pkg-config
+RUN python -m pip install mysqlclient
+RUN python -m pip install git+https://github.com/clips/pattern.git
+
+RUN python -c "import nltk; nltk.download('omw-1.4')"
+RUN python -c "import nltk; nltk.download('wordnet')"
+
+RUN pip install --force-reinstall torch==2.0.0
+
+WORKDIR /home

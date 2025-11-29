@@ -1,0 +1,41 @@
+defaults:
+  - benchmark/dataset: DefaultDatasetSettings
+  - benchmark/evaluation: DefaultEvaluationSettings
+  - benchmark/pipeline: Base
+  - benchmark/pipeline/model: Claude3
+  - benchmark/pipeline/document_processor: RecursiveDocSplitter
+  - benchmark/pipeline/retriever: OpenAiTextEmbeddingLarge
+  - benchmark/pipeline/reranker: MiniLmL12V2
+  - benchmark/pipeline/filter: NULL
+  - _self_
+benchmark:
+  pipeline:
+    retriever: 
+      k: 9
+    document_processor: 
+      chunk_size: 400
+      overlap_size: 0
+    model:
+      chain_type: refine
+  dataset:
+    name: nqopen_small_test
+    use_mutated_questions: True
+    include_benign: True
+    include_adversarial: True
+    include_irrelevant: True
+    include_only_query_specific_adversarial_docs: True
+    adv_context_type: 'unoptimized'
+    num_benign_docs: 1
+    num_malicious_docs: 1
+    document_type: dataset
+  evaluation: 
+    string_matching: True
+    bert_score: False
+    ragas: False
+  data_persistance_folder: /tmp/cache
+  data_cache_folder: data/cache2
+  fetch_k: 200
+  name: default
+  seed: 0
+runtime:
+  output_dir: data/outputs

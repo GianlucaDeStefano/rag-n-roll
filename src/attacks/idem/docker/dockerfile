@@ -1,0 +1,17 @@
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
+RUN apt-get update
+
+RUN apt-get install -y gcc g++ build-essential curl
+RUN pip install PyYAML==5.3.1 setuptools_rust docker-compose
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+RUN pip install transformers
+RUN python -m spacy download en_core_web_sm
+RUN pip install --upgrade fairseq
+RUN pip install --upgrade numpy==1.26.4
+WORKDIR /home
+
+# Download S1 surrogate model
+RUN pip install gdown
