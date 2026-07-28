@@ -45,11 +45,7 @@ python make_benchmark.py --dataset_path=<path to the dataset folder> --output_na
 
 
 #### Optimized Documents
-To generate optimized documents, you can use the following command:
-```bash
-python make_optimized_documents.py --dataset_path=<path to the dataset folder> --optimization_type=<optimization type>
-```
-This will spawn algorithm-specific docker containers to run the optimizations.
+To generate optimized documents, us ethe script optimize_dataset.py in each attack folder. 
 
 ### Benchmarking: 
 1) Create a config file to describe the benchmark you want to run and save it in ```Config/Pipelines```. This benchmark will specify:
