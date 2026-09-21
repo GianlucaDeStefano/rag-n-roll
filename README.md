@@ -45,7 +45,7 @@ python make_benchmark.py --dataset_path=<path to the dataset folder> --output_na
 
 
 #### Optimized Documents
-To generate optimized documents, us ethe script optimize_dataset.py in each attack folder. 
+To generate optimized documents, use the script optimize_dataset.py in each attack folder. 
 
 ### Benchmarking: 
 1) Create a config file to describe the benchmark you want to run and save it in ```Config/Pipelines```. This benchmark will specify:
@@ -55,6 +55,6 @@ See ```Configs/Pipelines/benchmark.yaml``` for an example
 
 2) Run the benchmark using the following command:
 ```bash
-python benchmark.py --config-name <name of your configuration fil (or empty to use the default one)>
+python benchmark_pipeline.py --config-name <name of your configuration fil (or empty to use the default one)>
 ```
 

@@ -12,7 +12,7 @@ scikit_learn==1.3.0
 sentence_transformers==2.4.0
 torch==2.3.0
 tqdm==4.65.0
-transformers==4.52.3
+transformers==4.51.3
 safetensors==0.4.3
 huggingface-hub
 wandb==0.15.3
@@ -46,3 +46,6 @@ langchain-milvus==0.1.4
 milvus-lite==2.4.10
 pymilvus==2.4.6
 typing-extensions
+setuptools<82
+pip<24
+wheel<0.45
